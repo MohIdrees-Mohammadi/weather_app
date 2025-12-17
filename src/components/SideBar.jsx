@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const SideBar = () => {
   const navigate = useNavigate()
   return (
-    <div className='lg:flex flex-col items-center gap-15 rounded-[20px] bg-secondary p-4 lg:p-6 h-[70%] lg:h-full'>
+    <div className='hidden lg:flex flex-col items-center gap-15 rounded-[20px] bg-secondary p-4 lg:p-6 h-[70%] lg:h-full'>
       <img src={umb} alt="icon" width={50}/>
 
       <div className='flex flex-col gap-8 mt-10'>
