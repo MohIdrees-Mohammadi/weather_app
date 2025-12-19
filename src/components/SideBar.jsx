@@ -17,7 +17,7 @@ const SideBar = () => {
 
       <div className='flex lg:flex-col items-center gap-15 sm:gap-8'>
 
-        {/* weather icon and text */}
+        
         <div onClick={ ()=> navigate('/home') } className='flex flex-col justify-center items-center gap-1 cursor-pointer '>
           <TiWeatherPartlySunny className='text-[1.2em] text-white ' />
           <span className='hidden lg:block  text-gray-400 text-md font-semibold'>Weather</span>

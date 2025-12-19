@@ -51,7 +51,6 @@ const Home = () => {
     <div className=' flex  flex-col lg:flex-row lg-screen  justify-center gap-5 '>
       <div className='  lg:w-[68%] lg:h-[100vm] lg:mb-0'>
         
-        {/* Header */}
         <div className='flex items-center lg:h-[30%]  sm:pl-5 pt-5 lg:pt-0 justify-between   '>
           <div className='flex flex-col text-center '>
             <div className='flex flex-col text-center  sm:items-start w-full'>
@@ -65,7 +64,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* TODAY'S FORECAST - بخش ساعت ها با استایل اصلی شما */}
+        
         <div className='bg-secondary md:w-[85%] md:w-full items-center   lg:h-[34%] pb-2 mb-3 lg:ml-0 rounded-[20px] '>
           <p className='ml-5 pt-5 mb-3 text-[0.6em] text-gray-400'>TODAY'S FORECAST</p>
           <div className='flex h-auto items-center  text-gray-400'>
@@ -109,7 +108,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Air Condition */}
+        
         <div className='bg-secondary flex  pl-5 lg:justify-between text-gray-400 gap-5 rounded-[20px] md:flex-row md:w-[85%] md:w-full lg:h-[34%] lg:ml-0 items center'>
           <div className='flex justify-between w-[70%] items-center '>
             <div className='flex flex-col gap-5 lg:mt-0'>
@@ -150,7 +149,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 7-DAY FORECAST - ستون سمت راست با ۷ ردیف و ترتیب درست */}
+      
       <div className='bg-secondary w-full lg:h-[90vh] h-full mb-15 flex flex-col lg:w-[34%] lg:mb-0 lg:ml-0 rounded-[20px] font-bold text-gray-400 px-5 items-center  '>
         <div className='flex flex-col h-full w-full'>
           <p className='sm:text-[1.3em] lg:text-[0.9em] pb-5 font-bold pt-5'>7-DAY FORECAST</p>

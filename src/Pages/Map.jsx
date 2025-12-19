@@ -6,6 +6,8 @@ import glody from '../assets/glody.png'
 import { FaPlus } from "react-icons/fa6";
 import { TiMinus } from "react-icons/ti";
 import { FaLocationArrow } from "react-icons/fa";
+import CityCard from '../components/CityCard';
+import WeatherCard from '@/components/WeatherCard'
 
 
 
@@ -13,12 +15,18 @@ import { FaLocationArrow } from "react-icons/fa";
 
 
 const Map = () => {
+  const cities = [
+    { city: 'Bilbao', latitude: 34.5553, longitude: 69.2075, icon: rani },
+    { city: 'Madrid', latitude: 34.3529, longitude: 62.2040, icon: sunny },
+    { city: 'Barcelona', latitude: 36.7090, longitude: 67.1109, icon: sunny },
+    { city: 'Malag', latitude: 31.6289, longitude: 65.7372, icon: glody },
+  ];
 
   return (
     <div className='flex flex-col gap-3
      md:gap-1 md:flex-row
      lg:flex-row   lg:gap-10'
-     >
+    >
       {/* Left Side - Map Section */}
       <div className='w-full h-fit md:w-[60%] flex flex-col gap-10  relative '>
         <img className='  h-100 w-120 md:w-220 md:h-157 lg:w-450 lg:h-157  ' src={map} alt="map" />
@@ -71,45 +79,26 @@ const Map = () => {
       </div>
       {/* Right Side - City Weather Cards */}
       <div
-       className='
+        className='
        w-[37%] flex flex-col items-center relative -right-37 gap-5
        md:right-0 md:gap-2 
       lg:gap-5'
       >
-          <div  className='flex flex-row justify-center items-center  bg-secondary rounded-3xl relative gap-30 h-25 w-110  py-5 px-2 md:gap-30 md:h-25 md:w-80  mdp:y-5 md:px-2 xl:gap-30 xl:h-25 xl:w-120  xl:py-5 xl:px-2'>
-            <img className='absolute w-[70px]  left-5 md:w-[70px]  md:left-5 xl:w-[70px]  xl:left-5'src={rani} alt="" />
-            <div 
-             className='flex flex-col  absolute gap-2 left-30 md:gap-2 md:left-30 xl:gap-2 xl:left-30'>
-              <span className='font-extrabold text-2xl  md:text-2xl xl:text-2xl'>Bilbao</span>
-              <span className='text-gray-400'>10:23</span>
-            </div>
-            <span className='font-semibold absolute text-3xl  right-10 md:text-3xl  md:right-6 xl:text-3xl  xl:right-10'>27°</span>
-          </div>
-          <div className='flex flex-row justify-center items-center  bg-secondary rounded-3xl relative gap-30 h-25 w-110  py-5 px-2 md:gap-30 md:h-25 md:w-80  mdp:y-5 md:px-2xl:gap-30 xl:h-25 xl:w-120  xl:py-5 xl:px-2'>
-            <img className='absolute w-[70px]  left-5 md:w-[70px]  md:left-5 xl:w-[70px]  xl:left-5' src={sunny} alt="son" />
-            <div  className='flex flex-col  absolute gap-2 left-30 md:gap-2 md:left-30 xl:gap-2 xl:left-30'>
-              <span className='font-extrabold text-2xl  md:text-2xl xl:text-2xl'>Barcelona</span>
-              <span className='text-gray-400'>10:23</span>
-            </div>
-            <span className='font-semibold absolute text-3xl  right-10 md:text-3xl  md:right-6 xl:text-3xl  xl:right-10'>29°</span>
-          </div>
-          <div className='flex flex-row justify-center items-center  bg-secondary rounded-3xl relative gap-30 h-25 w-110  py-5 px-2 md:gap-30 md:h-25 md:w-80  mdp:y-5 md:px-2xl:gap-30 xl:h-25 xl:w-120  xl:py-5 xl:px-2'>
-            <img className='absolute w-[70px]  left-5 md:w-[70px]  md:left-5 xl:w-[70px]  xl:left-5'  src={rani} alt="" />
-            <div className='flex flex-col  absolute gap-2 left-30 md:gap-2 md:left-30 xl:gap-2 xl:left-30'>
-              <span className='font-extrabold text-2xl  md:text-2xl xl:text-2xl'>Madrid</span>
-              <span className='text-gray-400'>10:23</span>
-            </div>
-            <span className='font-semibold absolute text-3xl  right-10 md:text-3xl  md:right-6 xl:text-3xl  xl:right-10'>31°</span>
-          </div>
-          <div className='flex flex-row justify-center items-center  bg-secondary rounded-3xl relative gap-30 h-25 w-110  py-5 px-2 md:gap-30 md:h-25 md:w-80  mdp:y-5 md:px-2xl:gap-30 xl:h-25 xl:w-120  xl:py-5 xl:px-2'>
-            <img className='absolute w-[70px]  left-5 md:w-[70px]  md:left-5 xl:w-[70px]  xl:left-5' src={glody} alt="" />
-            <div className='flex flex-col  absolute gap-2 left-30 md:gap-2 md:left-30 xl:gap-2 xl:left-30'>
-              <span className='font-extrabold text-2xl  md:text-2xl xl:text-2xl'>Malaga</span>
-              <span className='text-gray-400'>10:23</span>
-            </div>
-            <span className='font-semibold absolute text-3xl  right-10 md:text-3xl  md:right-6 xl:text-3xl  xl:right-10'>33°</span>
-        </div>
+          <div className="flex flex-col gap-4">
+      {cities.map((c, index) => (
+        <CityCard
+          key={index}
+          city={c.city}
+          latitude={c.latitude}
+          longitude={c.longitude}
+          icon={c.icon}
+        />
+      ))}
+    </div>
+
+
       </div>
+
     </div>
   )
 }
